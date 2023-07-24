@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "anime_studios",
+  "info": {
+    "singularName": "anime-studio",
+    "pluralName": "anime-studios",
+    "displayName": "Anime Studio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "anime": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::anime.anime",
+      "mappedBy": "anime_studios"
+    }
+  }
+}
