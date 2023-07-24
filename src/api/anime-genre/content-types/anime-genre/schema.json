@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "anime_genres",
+  "info": {
+    "singularName": "anime-genre",
+    "pluralName": "anime-genres",
+    "displayName": "Anime Genre",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "is_safe": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "anime": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::anime.anime",
+      "mappedBy": "anime_genres"
+    }
+  }
+}
