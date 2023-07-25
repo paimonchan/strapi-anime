@@ -24,7 +24,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::anime.anime",
-      "mappedBy": "anime_genres"
+      "inversedBy": "anime_genres"
     }
   }
 }

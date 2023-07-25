@@ -42,6 +42,19 @@
     "duration": {
       "type": "time",
       "default": "00:00"
+    },
+    "anime_genres": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::anime-genre.anime-genre",
+      "inversedBy": "anime"
+    },
+    "anime_studios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::anime-studio.anime-studio",
+      "inversedBy": "anime"
+    },
     }
   }
 }
