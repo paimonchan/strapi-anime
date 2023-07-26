@@ -19,7 +19,8 @@
     },
     "score": {
       "pluginOptions": {},
-      "type": "decimal"
+      "type": "decimal",
+      "default": 2
     },
     "start_date": {
       "type": "date"
@@ -55,6 +56,11 @@
       "target": "api::anime-studio.anime-studio",
       "inversedBy": "anime"
     },
+    "anime_maps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::anime-map.anime-map",
+      "mappedBy": "anime"
     }
   }
 }
