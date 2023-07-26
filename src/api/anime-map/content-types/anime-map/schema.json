@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "anime_maps",
+  "info": {
+    "singularName": "anime-map",
+    "pluralName": "anime-maps",
+    "displayName": "Anime Map",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "source": {
+      "type": "string",
+      "required": true
+    },
+    "txt_map_id": {
+      "type": "string"
+    },
+    "int_map_id": {
+      "type": "integer"
+    },
+    "anime": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::anime.anime",
+      "inversedBy": "anime_maps"
+    }
+  }
+}
