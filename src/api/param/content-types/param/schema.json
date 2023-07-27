@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "params",
+  "info": {
+    "singularName": "param",
+    "pluralName": "params",
+    "displayName": "Param",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    },
+    "param": {
+      "type": "string"
+    }
+  }
+}
