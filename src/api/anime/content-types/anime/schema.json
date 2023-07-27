@@ -44,6 +44,12 @@
       "type": "time",
       "default": "00:00"
     },
+    "anime_maps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::anime-map.anime-map",
+      "mappedBy": "anime"
+    },
     "anime_genres": {
       "type": "relation",
       "relation": "manyToMany",
@@ -55,12 +61,6 @@
       "relation": "manyToMany",
       "target": "api::anime-studio.anime-studio",
       "inversedBy": "anime"
-    },
-    "anime_maps": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::anime-map.anime-map",
-      "mappedBy": "anime"
     }
   }
 }
