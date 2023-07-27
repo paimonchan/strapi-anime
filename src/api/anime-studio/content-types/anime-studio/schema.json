@@ -20,7 +20,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::anime.anime",
-      "inversedBy": "anime_studios"
+      "mappedBy": "anime_studios"
     }
   }
 }
