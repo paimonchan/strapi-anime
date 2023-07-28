@@ -1,0 +1,30 @@
+{
+    "kind": "collectionType",
+    "collectionName": "anime_dumps",
+    "info": {
+      "singularName": "anime-dump",
+      "pluralName": "anime-dumps",
+      "displayName": "Anime Dump",
+      "description": ""
+    },
+    "options": {
+      "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+      "res_id": {
+        "type": "string",
+        "required": true
+      },
+      "res_source": {
+        "type": "string"
+      },
+      "res_dump": {
+        "type": "json"
+      },
+      "res_name": {
+        "type": "string"
+      }
+    }
+  }
+  
