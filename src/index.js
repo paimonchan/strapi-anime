@@ -1,5 +1,6 @@
 'use strict';
 
+/** strapi life cycle: https://docs.strapi.io/dev-docs/configurations/functions */
 module.exports = {
   /**
    * An asynchronous register function that runs before
