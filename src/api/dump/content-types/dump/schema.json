@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dumps",
+  "info": {
+    "singularName": "dump",
+    "pluralName": "dumps",
+    "displayName": "Dump",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "model": {
+      "type": "string"
+    },
+    "res_id": {
+      "type": "string"
+    },
+    "res_dump": {
+      "type": "json"
+    },
+    "to_delete": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
