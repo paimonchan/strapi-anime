@@ -4,6 +4,10 @@ Anime database for streaming sources.
 
 https://readme.so/editor
 
+## Todo
+- (research) wasabi s3
+- (research) backblaze storage
+
 ## Roadmap
 
 - (progress) cron management
