@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cronjobs",
+  "info": {
+    "singularName": "cronjob",
+    "pluralName": "cronjobs",
+    "displayName": "Cronjob",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "lastrun": {
+      "type": "datetime"
+    }
+  }
+}
