@@ -27,6 +27,15 @@ module.exports = createCoreService('api::cronjob.cronjob', ({strapi}) => ({
         return false
     },
 
+    async writeCron(cron, name, active) {
+        const vals = {
+            name            : name,
+            active          : active
+        }
+        const res = await strapi.entityService.update('api::cronjob.cronjob', cron.id, {data: vals})
+        return res
+    },
+
     async processCron(name, job) {
         const knex = strapi.db.connection
         await knex.transaction(async (transacting) => {
