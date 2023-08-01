@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "anime_titles",
+  "info": {
+    "singularName": "anime-title",
+    "pluralName": "anime-titles",
+    "displayName": "Anime Title"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "ref": {
+      "type": "string"
+    },
+    "anime": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::anime.anime",
+      "inversedBy": "anime_titles"
+    }
+  }
+}
