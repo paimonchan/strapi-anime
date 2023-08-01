@@ -7,6 +7,8 @@ https://readme.so/editor
 ## Todo
 - (research) wasabi s3
 - (research) backblaze storage
+- (research) custom cascade on strapi
+- (research) plugi for cronjob
 
 ## Roadmap
 
