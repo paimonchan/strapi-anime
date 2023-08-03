@@ -4,7 +4,10 @@ const doNothing = async () => {
 const common = (cron) => {
     const wrapTask = async ({strapi}) => {
         const job = async() => {
-            await cron.task({strapi})
+            const knex = strapi.db
+            await knex.transaction( async ({transacting}) => {
+                await cron.task({strapi, transacting})
+            })
         }
         const cronService = strapi.service('api::cronjob.cronjob')
         /** @note cron.name will be assign in src/index.js */
