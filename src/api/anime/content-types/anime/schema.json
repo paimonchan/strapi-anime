@@ -28,6 +28,9 @@
     "end_date": {
       "type": "date"
     },
+    "year": {
+      "type": "integer"
+    },
     "state": {
       "type": "enumeration",
       "enum": [
@@ -68,6 +71,37 @@
       "target": "api::anime-title.anime-title",
       "mappedBy": "anime"
     },
+    "description": {
+      "type": "richtext"
+    },
+    "season": {
+      "type": "enumeration",
+      "enum": [
+        "UNKNOWN",
+        "WINTER",
+        "SPRING",
+        "SUMMER",
+        "FALL"
+      ]
+    },
+    "img_vertical": {
+      "type": "string"
+    },
+    "img_horizontal": {
+      "type": "string"
+    },
+    "format": {
+      "type": "enumeration",
+      "enum": [
+        "UNKNOWN",
+        "TV",
+        "OVA",
+        "TV_SHORT",
+        "ONA",
+        "SPECIAL",
+        "MOVIE",
+        "MUSIC"
+      ]
     }
   }
 }
