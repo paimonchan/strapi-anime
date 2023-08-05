@@ -44,4 +44,13 @@ module.exports = {
             }
         }
     },
+
+    async destroy({strapi}) {
+        // FIXME: this is temporary to fix bug from strapi core.
+        //        bug location: (@strapi\strapi\lib\Strapi.js function async destroy()).
+        //        where in strapi core db destroyed first before cronjob.
+        //        it will raise error when the cron used transaction from low level knex (like strapi.db.transaction).
+        //        the cause for this error because db already destroyed, but another process still using the db pool (pendingOperation).
+        strapi.cron.destroy()
+    }
 };
