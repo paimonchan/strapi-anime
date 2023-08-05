@@ -18,14 +18,15 @@ module.exports = {
      * run jobs, or perform some special logic.
      */
     async bootstrap({strapi}) {
-        /** @note https://nodejs.org/api/events.html#error-events */
+        /** @ref https://tsmx.net/jest-process-exit/ unit test for mocking process.exit*/
+        /** @ref https://nodejs.org/api/events.html#error-events */
         /** module node-schedule emit('error') and because no one listen to this, */
         /** by default the node.js process will be terminated */
         /** @hack so we listend to this event and do log stack error instead terminated the server. */
         const cronjobs = strapi.cron.jobs || []
         for (const cronjob of cronjobs) {
             const job = cronjob.job
-            job.on('error', (err) => console.log(err))
+            job.on('error', (err) => strapi.log.error(err))
         }
 
         const cronjobService = strapi.service('api::cronjob.cronjob')
