@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "anime_episodes",
+  "info": {
+    "singularName": "anime-episode",
+    "pluralName": "anime-episodes",
+    "displayName": "Anime Episode"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "sequence": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "is_filler": {
+      "type": "boolean"
+    },
+    "release_date": {
+      "type": "datetime"
+    },
+    "img": {
+      "type": "string"
+    }
+  }
+}
