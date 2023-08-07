@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "anime_episode_medias",
+  "info": {
+    "singularName": "anime-episode-media",
+    "pluralName": "anime-episode-medias",
+    "displayName": "Anime Episode Media",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "source": {
+      "type": "string"
+    },
+    "media": {
+      "type": "string"
+    },
+    "anime_episode": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::anime-episode.anime-episode",
+      "inversedBy": "anime_episode_medias"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "broken": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
