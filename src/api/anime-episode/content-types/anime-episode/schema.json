@@ -4,7 +4,8 @@
   "info": {
     "singularName": "anime-episode",
     "pluralName": "anime-episodes",
-    "displayName": "Anime Episode"
+    "displayName": "Anime Episode",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -28,6 +29,18 @@
     },
     "img": {
       "type": "string"
+    },
+    "anime": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::anime.anime",
+      "inversedBy": "anime_episodes"
+    },
+    "anime_episode_medias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::anime-episode-media.anime-episode-media",
+      "mappedBy": "anime_episode"
     }
   }
 }

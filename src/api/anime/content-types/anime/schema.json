@@ -102,6 +102,12 @@
         "MOVIE",
         "MUSIC"
       ]
+    },
+    "anime_episodes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::anime-episode.anime-episode",
+      "mappedBy": "anime"
     }
   }
 }
