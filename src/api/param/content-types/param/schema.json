@@ -13,10 +13,13 @@
   "pluginOptions": {},
   "attributes": {
     "key": {
-      "type": "string"
+      "type": "string",
+      "unique": true,
+      "required": true
     },
     "param": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }
