@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "model": {
+    "res_usage": {
       "type": "string"
     },
     "res_id": {
@@ -24,6 +24,9 @@
     "to_delete": {
       "type": "boolean",
       "default": false
+    },
+    "res_date": {
+      "type": "date"
     }
   }
 }
