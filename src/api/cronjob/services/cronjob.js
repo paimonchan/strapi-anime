@@ -37,20 +37,35 @@ module.exports = createCoreService('api::cronjob.cronjob', ({strapi}) => ({
     },
 
     async processCron(name, job) {
+        /** this technic not used auto commit and rollback */
         const knex = strapi.db.connection
         await knex.transaction(async (transacting) => {
             try {
-                /** @todo do transaction nowait noupdate here */
-                const response = await knex('cronjob')
+                // @ts-ignore
+                const response = await knex('cronjobs')
                                 .select('*')
                                 .where({name: name})
                                 .transacting(transacting)
                                 .forUpdate()
                                 .noWait()
+                                .first()
+                /** 
+                 * @note no need to create one if not exist.
+                 * because if user intended delete cronjob record,
+                 * that mean the cron shouldn't be running.
+                 */
+                if (!response || !response.active) {
+                    return
+                }
+                
                 await job()
                 return response
             } catch (e) {
-                console.log(e)
+                if (e.code == '55P03') {
+                    strapi.log.info(`[${name}] Another cronjob is already busy running`)
+                } else {
+                    throw e
+                }
             }
         })
     }
