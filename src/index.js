@@ -8,7 +8,9 @@ module.exports = {
      *
      * This gives you an opportunity to extend code.
      */
-    register(/*{ strapi }*/) {},
+    async register({ strapi }) {
+        
+    },
 
     /**
      * An asynchronous bootstrap function that runs before
@@ -33,6 +35,7 @@ module.exports = {
         const cronsConfig = require('../cronjob')
         for (const name in cronsConfig) {
             const cronConfig = cronsConfig[name]
+            /** @note inject name to cronConfig */
             cronConfig.cron.name = name
 
             const {active} = cronConfig
