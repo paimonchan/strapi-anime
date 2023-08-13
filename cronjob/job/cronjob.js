@@ -6,7 +6,9 @@ const common = (cron) => {
         const job = async() => {
             const knex = strapi.db
             await knex.transaction( async ({transacting}) => {
+                strapi.log.info(`[${cron.name}] start cron`)
                 await cron.task({strapi, transacting})
+                strapi.log.info(`[${cron.name}] end cron`)
             })
         }
         const cronService = strapi.service('api::cronjob.cronjob')
